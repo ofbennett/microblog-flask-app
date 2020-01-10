@@ -9,4 +9,4 @@ class Config(object):
     POSTS_PER_PAGE = 10
     MS_TRANSLATION_KEY = os.environ.get('MS_TRANSLATION_KEY') or 'this-is-my-key'
     ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
-    STORE_EMAIL = False
+    STORE_EMAIL = True

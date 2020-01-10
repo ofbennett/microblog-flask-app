@@ -74,7 +74,7 @@ class User(UserMixin, db.Model):
         return ans
     
     def avatar(self,size):
-        if app.config['STORE_EMAIL']:
+        if self.email:
             digest = md5(self.email.lower().encode('utf-8')).hexdigest()
         else:
             digest = md5(self.username.lower().encode('utf-8')).hexdigest()
