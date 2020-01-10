@@ -1,4 +1,4 @@
-from app import db, login
+from app import db, login, app
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
@@ -74,7 +74,10 @@ class User(UserMixin, db.Model):
         return ans
     
     def avatar(self,size):
-        digest = md5(self.email.lower().encode('utf-8')).hexdigest()
+        if app.config['STORE_EMAIL']:
+            digest = md5(self.email.lower().encode('utf-8')).hexdigest()
+        else:
+            digest = md5(self.username.lower().encode('utf-8')).hexdigest()
         return 'https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(digest,size)
     
     def follow(self,user):

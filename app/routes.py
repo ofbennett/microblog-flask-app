@@ -58,7 +58,10 @@ def register():
         return redirect(url_for('index'))
     form = RegistrationForm()
     if form.validate_on_submit():
-        user = User(username = form.username.data, email=form.email.data)
+        if app.config['STORE_EMAIL']:
+            user = User(username = form.username.data, email=form.email.data)
+        else:
+            user = User(username = form.username.data)
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
