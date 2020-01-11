@@ -2,9 +2,9 @@
 
 {% block title %}
     {% if title %}
-    <title>{{ title }} - Microblog</title>
+    <title>{{ title }} - Talktin</title>
     {% else %}
-    <title>Welcome to Microblog!</title>
+    <title>Welcome to Talktin!</title>
     {% endif %}
 {% endblock %}
 
@@ -12,7 +12,7 @@
 <nav class="navbar navbar-default">
 <div class="container">
 
-    <a class="navbar-brand" href="{{ url_for('index') }}">Microblog:</a>
+    <a class="navbar-brand" href="{{ url_for('index') }}">Talktin:</a>
 
     <ul class="nav navbar-nav">
     <li><a href="{{ url_for('index') }}">Home</a></li>
