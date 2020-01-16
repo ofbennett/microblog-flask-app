@@ -6,11 +6,14 @@ The app makes use of a variety of useful Flask extensions including Flask-Bootst
 
 The app itself is a microblog which allows users to make accounts, login, post messages, and follow posts by other users. There is also an automatic post translation service (as of yet incomplete) and a post text search feature implemented with [Elasticsearch](https://www.elastic.co/products/elasticsearch).
 
+The app can be deployed in a number of different ways as outlined below. By far the easiest is the third option which uses [docker-compose](https://docs.docker.com/compose/). This reads the container configurations from the `docker-compose.yml` file and automatically sets up the whole application, creating and running all of the necessary containers and networking them together. 
+
+-----------
+
 To manually run and host locally:
 ```
 $ conda create -n mb_flask_env python=3.7 pip
 $ source activate mb_flask_env
-$ git clone https://github.com/ofbennett/microblog_flask_app.git
 $ pip install -r requirements.txt
 $ export FLASK_APP=microblog.py
 $ flask db update
@@ -50,3 +53,5 @@ $ docker-compose up
 ```
 
 The app will be available to view in a browswer at: `localhost:8000/`
+
+To gracefully stop the app after this simply type: `docker-compose down`
