@@ -1,0 +1,28 @@
+version: '3'
+services:
+    microblog_app:
+        build: .
+        image: microblog:latest
+        ports:
+            - 8000:5000
+        environment:
+            - SECRET_KEY
+            - DATABASE_URL=mysql+pymysql://ofb:${MYSQL_PASSWORD}@mysql:3306/microblog
+            - ELASTICSEARCH_URL=http://elasticsearch:9200
+        restart: always
+        depends_on: 
+            - mysql
+            - elasticsearch
+    mysql:
+        image: mysql/mysql-server:5.7
+        environment:
+            - MYSQL_RANDOM_ROOT_PASSWORD=yes
+            - MYSQL_DATABASE=microblog
+            - MYSQL_USER=ofb
+            - MYSQL_PASSWORD
+        restart: always
+    elasticsearch:
+        image: docker.elastic.co/elasticsearch/elasticsearch:6.8.6
+        environment:
+            - discovery.type=single-node
+        restart: always

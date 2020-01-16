@@ -6,7 +6,7 @@ The app makes use of a variety of useful Flask extensions including Flask-Bootst
 
 The app itself is a microblog which allows users to make accounts, login, post messages, and follow posts by other users. There is also an automatic post translation service (as of yet incomplete) and a post text search feature implemented with [Elasticsearch](https://www.elastic.co/products/elasticsearch).
 
-To run and host locally:
+To manually run and host locally:
 ```
 $ conda create -n mb_flask_env python=3.7 pip
 $ source activate mb_flask_env
@@ -37,5 +37,16 @@ $ docker run --name microblog --network my_net -d -p 8000:5000 --rm -e SECRET_KE
 ```
 
 Replace `choose-a-password` (both appearances) with a password for the mysql database and replace `my-secret-key` with a long random string that only you know.
+
+The app will be available to view in a browswer at: `localhost:8000/`
+
+-----------
+
+To run with docker-compose (easiest):
+```
+$ export SECRET_KEY=<choose-secret-key>
+$ export MYSQL_PASSWORD=<choose-mysql-password>
+$ docker-compose up
+```
 
 The app will be available to view in a browswer at: `localhost:8000/`
