@@ -15,6 +15,7 @@ COPY microblog.py config.py boot.sh ./
 RUN chmod +x boot.sh
 
 ENV FLASK_APP microblog.py
+ENV USE_DOCKER True
 
 RUN chown -R ofb:ofb ./
 USER ofb

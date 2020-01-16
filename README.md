@@ -33,9 +33,9 @@ $ docker build -t microblog:latest .
 $ docker network create my_net
 $ docker run --name mysql --network my_net -d -e MYSQL_RANDOM_ROOT_PASSWORD=yes -e MYSQL_DATABASE=microblog -e MYSQL_USER=ofb -e MYSQL_PASSWORD=<choose-a-password> mysql/mysql-server:5.7
 $ docker run --name elasticsearch --network my_net --rm -d -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.8.6
-$ docker run --name microblog --network my_net -d -p 8000:5000 --rm -e DATABASE_URL=mysql+pymysql://ofb:<choose-a-password>@mysql:3306/microblog -e ELASTICSEARCH_URL=http://elasticsearch:9200 microblog:latest
+$ docker run --name microblog --network my_net -d -p 8000:5000 --rm -e SECRET_KEY=my-secret-key -e DATABASE_URL=mysql+pymysql://ofb:<choose-a-password>@mysql:3306/microblog -e ELASTICSEARCH_URL=http://elasticsearch:9200 microblog:latest
 ```
 
-Replace `choose-a-password` (both appearances) with a password for the mysql database and choose a long random string that only you know as a secret key in the .env file.
+Replace `choose-a-password` (both appearances) with a password for the mysql database and replace `my-secret-key` with a long random string that only you know.
 
 The app will be available to view in a browswer at: `localhost:8000/`
