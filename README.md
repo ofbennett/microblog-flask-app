@@ -1,16 +1,18 @@
 # Microblog Flask Web App
 
-This is a web app built with Python and Flask from the ground up by following Miguel Grinberg's phenomenal [tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world). Most of the code is either very similar or identical to example code he provides. Anyone interested in learning about full stack web development will find the resources he provides truly invaluable. 
-
-The app makes use of a variety of useful Flask extensions including Flask-Bootstrap, Flask-Login, Flask-Moment, Flask-WTF, as well as Flask-SQLAlchemy and Flask-Migrate for interfacing with and managing a relational database on the backend. Front end styling is acheived with Bootstrap. 
+This is a web app built with Python and Flask from the ground up by following Miguel Grinberg's phenomenal [tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world). Anyone interested in learning about full stack web development will find the resources he provides truly invaluable. 
 
 The app itself is a microblog which allows users to make accounts, login, post messages, and follow posts by other users. There is also an automatic post translation service (as of yet incomplete) and a post text search feature implemented with [Elasticsearch](https://www.elastic.co/products/elasticsearch).
+
+The app makes use of a variety of useful Flask extensions including Flask-Bootstrap, Flask-Login, Flask-Moment, Flask-WTF, as well as Flask-SQLAlchemy and Flask-Migrate for interfacing with and managing a relational database on the backend. Frontend styling is acheived with Bootstrap. 
 
 The app can be deployed in a number of different ways as outlined below. By far the easiest is the third option which uses [docker-compose](https://docs.docker.com/compose/). This reads the container configurations from the `docker-compose.yml` file and automatically sets up the whole application, creating and running all of the necessary containers and networking them together. 
 
 -----------
 
 To manually run and host locally:
+
+Choose a secret key and place it in the `.env` file. This should be a long random string that only you know.
 ```
 $ conda create -n mb_flask_env python=3.7 pip
 $ source activate mb_flask_env
