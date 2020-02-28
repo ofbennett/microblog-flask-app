@@ -1,7 +1,9 @@
 # Microblog Flask Web App
 
+## The Tutorial
 This is a web app built with Python and Flask from the ground up by following Miguel Grinberg's phenomenal [tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world). Anyone interested in learning about full stack web development will find the resources he provides truly invaluable. 
 
+## The App
 The app itself is a microblog which allows users to make accounts, login, post messages, and follow posts by other users. There is also an automatic post translation service (as of yet incomplete) and a post text search feature implemented with [Elasticsearch](https://www.elastic.co/products/elasticsearch).
 
 <p align="center"><img src="./screenshot.png" width="600"></p>
@@ -10,7 +12,7 @@ The app makes use of a variety of useful Flask extensions including Flask-Bootst
 
 The app can be deployed in a number of different ways as outlined below. By far the easiest is the third option which uses [docker-compose](https://docs.docker.com/compose/). This reads the container configurations from the `docker-compose.yml` file and automatically sets up the whole application, creating and running all of the necessary containers and networking them together. 
 
------------
+## How To Run Locally with a Flask server
 
 To manually run and host locally:
 
@@ -32,7 +34,7 @@ To include this feature run:
 $ export ELASTICSEARCH_URL=http://localhost:9200
 ```
 
------------
+## How to Run with Docker and a Gunicorn Server
 
 To run with docker:
 ```
@@ -47,7 +49,7 @@ Replace `choose-a-password` (both appearances) with a password for the mysql dat
 
 The app will be available to view in a browswer at: `localhost:8000/`
 
------------
+## How to Run with Docker-Compose and a Gunicorn Server
 
 To run with docker-compose (easiest):
 ```
