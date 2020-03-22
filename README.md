@@ -1,7 +1,7 @@
 # Microblog Flask Web App
 
 ## The Tutorial
-This is a web app built with Python and Flask from the ground up by following Miguel Grinberg's phenomenal [tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world). Anyone interested in learning about full stack web development will find the resources he provides truly invaluable. 
+This is a web app built with Python and Flask from the ground up by following Miguel Grinberg's outstanding [tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world). Anyone interested in learning about full stack web development will find the resources he provides truly invaluable. 
 
 ## The App
 The app itself is a microblog which allows users to make accounts, login, post messages, and follow posts by other users. There is also an automatic post translation service (as of yet incomplete) and a post text search feature implemented with [Elasticsearch](https://www.elastic.co/products/elasticsearch).
